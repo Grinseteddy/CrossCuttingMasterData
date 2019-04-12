@@ -15,6 +15,7 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 public class MasterDataController {
 
+    static Logger logger=LoggerFactory.getLogger(MasterDataController.class);
 
     @GetMapping(value = "/Character/{index}")
     @ResponseBody
@@ -23,6 +24,7 @@ public class MasterDataController {
         try {
 
             MasterData answer = new MasterData(Integer.valueOf(index));
+            logger.info("Master data valid response: "+String.valueOf(answer.SmallLetter)+ " "+String.valueOf(answer.Capital));
             return answer;
 
         } catch (Exception e) {
