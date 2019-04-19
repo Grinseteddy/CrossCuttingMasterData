@@ -38,6 +38,30 @@ public class MasterDataController {
         }
         return null;
     }
+
+    @GetMapping(value = "/small")
+    @ResponseBody
+    public String smallAlphabet() throws Exception {
+        try {
+            char[] answer = MasterData.alphabetSmall;
+            logger.info("Master data valid response Small Alphabet");
+            return String.valueOf(answer);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Alphabet not found.");
+        }
+    }
+
+    @GetMapping(value = "/capital")
+    @ResponseBody
+    public String capitalAlphabet() throws Exception {
+        try {
+            char[] answer = MasterData.alphabetCapital;
+            logger.info("Master data valid response Capital Alphabet");
+            return String.valueOf(answer);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Alphabet not found.");
+        }
+    }
 }
 
 
