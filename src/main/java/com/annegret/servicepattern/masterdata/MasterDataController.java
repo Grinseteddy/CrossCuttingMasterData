@@ -24,7 +24,7 @@ public class MasterDataController {
         try {
 
             MasterData answer = new MasterData(Integer.valueOf(index));
-            logger.info("Master data valid response: "+String.valueOf(answer.SmallLetter)+ " "+String.valueOf(answer.Capital));
+            logger.info("Master data valid response: "+String.valueOf(answer.getSmallLetter())+ " "+String.valueOf(answer.getCapital()));
             return answer;
 
         } catch (Exception e) {
@@ -43,7 +43,7 @@ public class MasterDataController {
     @ResponseBody
     public String smallAlphabet() throws Exception {
         try {
-            char[] answer = MasterData.alphabetSmall;
+            char[] answer = MasterDataFull.alphabetSmall;
             logger.info("Master data valid response Small Alphabet");
             return String.valueOf(answer);
         } catch (Exception e) {
@@ -55,7 +55,7 @@ public class MasterDataController {
     @ResponseBody
     public String capitalAlphabet() throws Exception {
         try {
-            char[] answer = MasterData.alphabetCapital;
+            char[] answer = MasterDataFull.alphabetCapital;
             logger.info("Master data valid response Capital Alphabet");
             return String.valueOf(answer);
         } catch (Exception e) {
