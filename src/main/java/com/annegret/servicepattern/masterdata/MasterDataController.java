@@ -62,6 +62,26 @@ public class MasterDataController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Alphabet not found.");
         }
     }
+
+    @PutMapping(value = "/capital/{id}/{character}")
+    public String newCharacterInAlphabetCapital(@PathVariable int id, @PathVariable char character) throws Exception {
+        try {
+            MasterDataFull.alphabetCapital[id]=character;
+            return String.valueOf(MasterDataFull.alphabetCapital);
+        } catch (Exception e) {
+            throw new ResponseStatusException((HttpStatus.BAD_REQUEST), "Index has to be an index between 0 and 25");
+        }
+    }
+
+    @PutMapping(value= "/small/{id}/{character}")
+    public String newCharacterInAlphabetSmall(@PathVariable int id, @PathVariable char character) throws Exception {
+        try {
+            MasterDataFull.alphabetSmall[id]=character;
+            return String.valueOf(MasterDataFull.alphabetSmall);
+        } catch (Exception e) {
+            throw new ResponseStatusException((HttpStatus.BAD_REQUEST), "Index has to be an index between 0 and 25");
+        }
+    }
 }
 
 
