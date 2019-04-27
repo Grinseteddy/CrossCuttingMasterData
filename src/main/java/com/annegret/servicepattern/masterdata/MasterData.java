@@ -2,22 +2,20 @@ package com.annegret.servicepattern.masterdata;
 
 public class MasterData {
 
+    private String smallLetter;
+    private String capitalLetter;
 
-    private String SmallLetter="a";
-    private String Capital="A";
-
-    MasterData(int index){
-        SmallLetter=String.valueOf(MasterDataFull.alphabetSmall[index]);
-        Capital=String.valueOf(MasterDataFull.alphabetCapital[index]);
+    public MasterData(int index){
+        smallLetter = String.valueOf(MasterDataFull.alphabetSmall[index]);
+        capitalLetter = String.valueOf(MasterDataFull.alphabetCapital[index]);
     }
 
     public String getSmallLetter(){
-        return this.SmallLetter;
+        return this.smallLetter;
     }
 
-    public String getCapital() {
-       return this.Capital;
+    public String getCapitalLetter() {
+       return this.capitalLetter;
     }
-
 
 }
