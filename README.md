@@ -8,11 +8,6 @@ Run
 
     mvn spring-boot:run
     
-Test
----
-
-Open http://localhost:8084/filter/ABC
-
 Build docker image 
 ---
 
